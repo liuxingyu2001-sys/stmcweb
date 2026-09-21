@@ -125,6 +125,12 @@
           <h3>可爱玩偶</h3>
           <p>可穿戴、可放置，还能增加生命值，谁不想要呢？</p>
         </div>
+
+        <div class="card card-sm clickable-card" data-modal="modal-crops">
+          <div class="card-icon" style="font-size:40px; margin-bottom:10px;">🌾</div>
+          <h3>星露谷种植</h3>
+          <p>种植各种作物，收获普通、银星、金星品质，打造你的农场帝国。</p>
+        </div>
 </div>
     </div>
   </section>
@@ -660,6 +666,107 @@
           <img src="images/gallery/plushie_5.jpg" alt="玩偶" style="width:100%; border-radius:4px; border:1px solid rgba(255,255,255,0.1);">
           <img src="images/gallery/plushie_6.jpg" alt="玩偶" style="width:100%; border-radius:4px; border:1px solid rgba(255,255,255,0.1);">
         </div>
+      </div>
+    </div>
+
+    <!-- Modal: Crops -->
+    <div class="modal-box glass-panel" id="modal-crops">
+      <button class="modal-close" aria-label="关闭">&times;</button>
+      <h2 class="modal-title">星露谷种植系统</h2>
+      <div class="modal-body markdown-body">
+        <p><strong>体验星露谷物语般的种植乐趣！种植作物、收获高品质果实、解锁更多品种。</strong></p>
+        <hr>
+        <h3>🌱 种植玩法</h3>
+        <ul>
+          <li>在商店购买种子，右键耕地即可种植</li>
+          <li>每个作物有独特的生长周期和最佳种植季节</li>
+          <li>使用洒水壶或洒水器自动浇水，提高效率</li>
+          <li>骨粉可以加速生长</li>
+        </ul>
+        <h3>⭐ 品质系统</h3>
+        <p>收获时有概率获得不同品质的作物：</p>
+        <ul>
+          <li><strong style="color: #fff;">普通品质</strong> - 基础收获</li>
+          <li><strong style="color: #aaa;">银星品质</strong> - 稀有掉落，售价更高</li>
+          <li><strong style="color: #ffd700;">金星品质</strong> - 超稀有，最高售价</li>
+        </ul>
+        <h3>🍅 可种植作物</h3>
+        <table style="width:100%; border-collapse: collapse; margin-top: 12px;">
+          <thead>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+              <th style="padding: 8px; text-align: left;">作物</th>
+              <th style="padding: 8px; text-align: left;">季节</th>
+              <th style="padding: 8px; text-align: left;">特点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🍅 番茄</td>
+              <td style="padding: 8px;">春季</td>
+              <td style="padding: 8px;">可产出巨型番茄</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🍍 菠萝</td>
+              <td style="padding: 8px;">夏季</td>
+              <td style="padding: 8px;">可产出巨型菠萝</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🥬 卷心菜</td>
+              <td style="padding: 8px;">春/夏</td>
+              <td style="padding: 8px;">可产出巨型卷心菜</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🌽 玉米</td>
+              <td style="padding: 8px;">夏/秋</td>
+              <td style="padding: 8px;">基础作物</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🍺 啤酒花</td>
+              <td style="padding: 8px;">夏季</td>
+              <td style="padding: 8px;">产量高，自动重生</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🧄 大蒜</td>
+              <td style="padding: 8px;">四季</td>
+              <td style="padding: 8px;">产量稳定</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🌶️ 辣椒</td>
+              <td style="padding: 8px;">春/秋</td>
+              <td style="padding: 8px;">产量高，可自动重生</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🍇 葡萄</td>
+              <td style="padding: 8px;">春/夏/秋</td>
+              <td style="padding: 8px;">可自动重生</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🍆 茄子</td>
+              <td style="padding: 8px;">夏/秋</td>
+              <td style="padding: 8px;">基础作物</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🥬 白菜</td>
+              <td style="padding: 8px;">春/夏/秋</td>
+              <td style="padding: 8px;">基础作物</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 8px;">🐉 火龙果</td>
+              <td style="padding: 8px;">春/夏/秋</td>
+              <td style="padding: 8px;">稀有作物，可自动重生</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">🧧 摇钱树</td>
+              <td style="padding: 8px;">冬季</td>
+              <td style="padding: 8px;">冬季限定，掉落红包</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>🛠️ 农场工具</h3>
+        <ul>
+          <li><strong>洒水壶</strong> - 4个等级，手动浇水</li>
+          <li><strong>洒水器</strong> - 3个等级，自动浇灌周围作物</li>
+        </ul>
       </div>
     </div>
 
