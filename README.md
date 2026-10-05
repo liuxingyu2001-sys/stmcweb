@@ -10,22 +10,39 @@ STCraft Minecraft 生存服务器的官方网站，纯静态页面（HTML + CSS 
 ```
 web/
 ├── public/                 # 网站根目录（Cloudflare Pages 的构建输出目录就填它）
-│   ├── index.html          # 主页
+│   ├── index.html          # 主页（首屏状态 + 亮点入口 + 玩法速览 + 加入条）
+│   ├── wiki.html           # ★ Wiki 页：Markdown 文档渲染（侧栏目录 + 正文 + 本页目录）
+│   ├── docs/               # ★ Wiki 内容（每篇一个 .md，直接改这里）
+│   │   ├── index.md        #   Wiki 首页 / 总览目录
+│   │   ├── start.md        #   加入指南
+│   │   ├── features.md     #   服务器特色
+│   │   ├── gameplay.md     #   玩法介绍
+│   │   ├── advanced.md     #   进阶玩法（灵魂戒指 / 战令 / 玩偶 / 星露谷 / 附魔）
+│   │   ├── rules.md        #   服务器规则
+│   │   └── faq.md          #   常见问题
 │   ├── 404.html            # 404 页面
 │   ├── robots.txt
 │   ├── css/style.css       # 全部样式
+│   ├── data_enchants.json  # 自定义附魔数据（Wiki 附魔表读取）
 │   ├── images/favicon.svg  # 草方块图标
 │   └── js/
 │       ├── config.js       # ★ 网站配置：服务器地址、QQ 群、管理团队等，改这里就行
-│       └── main.js         # 交互：状态查询、复制按钮、导航等
+│       ├── main.js         # 交互：状态查询、复制按钮、导航等
+│       └── wiki.js         # Wiki 路由与 Markdown 解析（marked + 内置降级解析器）
 └── README.md
 ```
 
 ## 修改网站内容
 
-- **服务器地址 / QQ 群 / 管理成员 / 版本号**：编辑 `public/js/config.js`。
-- **页面文案（特色、玩法、规则、FAQ 等）**：直接编辑 `public/index.html`。
+- **服务器地址 / QQ 群 / 管理成员 / 版本号 / 核心名**：编辑 `public/js/config.js`。
+- **Wiki 文档（特色、玩法、进阶、规则、FAQ 等）**：编辑 `public/docs/*.md`，
+  支持标准 Markdown（标题、列表、表格、引用、代码块、链接、图片、原样 HTML 锚点）。
+  文档内站内链接写成 `[玩法介绍](gameplay)`，页内锚点写成 `[灵魂戒指](advanced#soulring)`。
+- **主页文案（首屏、亮点卡片、玩法速览）**：编辑 `public/index.html`。
 - **样式 / 配色**：编辑 `public/css/style.css`（顶部 CSS 变量即可换主题色）。
+
+> Markdown 解析优先使用 CDN 上的 marked；CDN 不可用时自动切换到
+> `wiki.js` 内置的降级解析器，页面不会白屏。
 
 ## 本地预览
 

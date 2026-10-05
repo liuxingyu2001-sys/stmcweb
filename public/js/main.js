@@ -24,6 +24,7 @@
   });
 
   if ($("maxPlayers")) $("maxPlayers").textContent = cfg.maxPlayers || "-";
+  if ($("serverCore")) $("serverCore").textContent = cfg.core || "-";
   if ($("year")) $("year").textContent = String(new Date().getFullYear());
 
   /* ---------- QQ 群 ---------- */

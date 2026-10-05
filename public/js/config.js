@@ -15,7 +15,10 @@ window.SITE_CONFIG = {
   version: "26.2",
 
   /* 最大玩家数（在线时以查询结果为准） */
-  maxPlayers: 20,
+  maxPlayers: 50,
+
+  /* 服务端核心（首屏状态卡展示） */
+  core: "Leaf 26.2",
 
   /* QQ 群号（留空 "" 则页面上不显示） */
   qqGroup: "786360709",

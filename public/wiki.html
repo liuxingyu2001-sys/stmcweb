@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki — STCraft 服务器百科</title>
+  <meta name="description" content="STCraft 服务器百科：加入指南、服务器特色、玩法介绍、进阶系统、规则与常见问题。">
+  <link rel="icon" type="image/svg+xml" href="images/4.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="wiki-body">
+
+  <!-- ============ 导航栏 ============ -->
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-icon" src="images/4.png" alt="STCraft 图标" width="64" height="64">
+        <span class="brand-text">STCraft<span class="brand-sub">Wiki</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">首页</a>
+        <a href="index.html#highlights">亮点</a>
+        <a href="#start">加入指南</a>
+        <a href="#rules">规则</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- ============ 移动端工具条 ============ -->
+  <div class="wiki-toolbar">
+    <div class="wiki-toolbar-inner">
+      <button class="wiki-side-toggle" id="wikiSideToggle" aria-label="打开目录">目录</button>
+      <nav class="wiki-crumb" id="wikiCrumb">Wiki</nav>
+    </div>
+  </div>
+
+  <!-- ============ 主体 ============ -->
+  <div class="wiki-layout">
+
+    <!-- 侧边目录 -->
+    <aside class="wiki-sidebar" id="wikiSidebar">
+      <div class="wiki-side-group">
+        <span class="wiki-side-title">开始</span>
+        <a href="#index" data-doc="index">Wiki 首页</a>
+        <a href="#start" data-doc="start">加入指南</a>
+      </div>
+      <div class="wiki-side-group">
+        <span class="wiki-side-title">了解服务器</span>
+        <a href="#features" data-doc="features">服务器特色</a>
+        <a href="#gameplay" data-doc="gameplay">玩法介绍</a>
+      </div>
+      <div class="wiki-side-group">
+        <span class="wiki-side-title">进阶玩法</span>
+        <a href="#advanced" data-doc="advanced">总览</a>
+        <a class="wiki-side-sub" href="#advanced/soulring">灵魂空间戒指</a>
+        <a class="wiki-side-sub" href="#advanced/battlepass">战令通行证</a>
+        <a class="wiki-side-sub" href="#advanced/plushies">可爱玩偶</a>
+        <a class="wiki-side-sub" href="#advanced/crops">星露谷种植</a>
+        <a class="wiki-side-sub" href="#advanced/enchants">自定义附魔</a>
+      </div>
+      <div class="wiki-side-group">
+        <span class="wiki-side-title">帮助</span>
+        <a href="#rules" data-doc="rules">服务器规则</a>
+        <a href="#faq" data-doc="faq">常见问题</a>
+      </div>
+    </aside>
+
+    <!-- 正文 -->
+    <main class="wiki-main">
+      <article class="markdown-body" id="wikiContent">
+        <p>加载中…</p>
+      </article>
+    </main>
+
+    <!-- 本页目录 -->
+    <aside class="wiki-toc" id="wikiToc">
+      <span class="wiki-toc-title">本页目录</span>
+      <nav id="wikiTocNav"></nav>
+    </aside>
+  </div>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="footer wiki-footer">
+    <div class="container">
+      <div class="footer-team">
+        <span class="footer-team-label">管理团队</span>
+        <div class="team-avatars" id="teamAvatars"></div>
+      </div>
+      <div class="footer-meta">
+        <p>&copy; <span id="year">2026</span> STCraft &middot; Minecraft 生存服务器</p>
+        <p id="footerContact"></p>
+        <p class="footer-note">本站为玩家自建页面，与 Mojang Studios / Microsoft 无关。Minecraft 是 Mojang Studios 的商标。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/wiki.js"></script>
+</body>
+</html>

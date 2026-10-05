@@ -1193,3 +1193,417 @@ details.glass-panel p {
   border-radius: 4px;
   font-family: monospace;
 }
+
+/* ============ Wiki 页面 ============ */
+
+.wiki-body {
+  background: var(--bg);
+}
+
+.brand-sub {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-left: 8px;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-shadow: none;
+}
+
+.wiki-toolbar {
+  position: sticky;
+  top: 64px;
+  z-index: 90;
+  margin-top: 64px;
+  background: rgba(13, 17, 23, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.wiki-toolbar-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wiki-crumb {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.wiki-crumb a {
+  color: var(--green);
+}
+
+.wiki-crumb .sep {
+  opacity: 0.45;
+  margin: 0 6px;
+}
+
+.wiki-crumb .now {
+  color: var(--text);
+}
+
+.wiki-side-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+.wiki-side-toggle:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.wiki-layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 24px 72px;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) 200px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* 侧栏 */
+
+.wiki-sidebar {
+  position: sticky;
+  top: 122px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.wiki-side-group {
+  margin-bottom: 22px;
+}
+
+.wiki-side-title {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  padding-left: 12px;
+}
+
+.wiki-sidebar a {
+  display: block;
+  padding: 7px 12px;
+  color: var(--muted);
+  font-size: 14px;
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0;
+  transition: color 0.18s, background 0.18s;
+}
+
+.wiki-sidebar a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wiki-sidebar a.active {
+  color: #07130a;
+  background: var(--green);
+  border-left-color: var(--green);
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.wiki-sidebar a.wiki-side-sub {
+  padding-left: 26px;
+  font-size: 13px;
+}
+
+/* 正文 */
+
+.wiki-main {
+  min-width: 0;
+}
+
+.wiki-loading {
+  color: var(--muted);
+}
+
+.wiki-main .markdown-body {
+  font-size: 15.5px;
+}
+
+.wiki-main .markdown-body [id] {
+  scroll-margin-top: 30px;
+}
+
+.wiki-main .markdown-body h1 {
+  font-size: 30px;
+  margin-top: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.wiki-main .markdown-body h2 {
+  font-size: 22px;
+  margin-top: 2em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wiki-main .markdown-body h2:first-child {
+  margin-top: 0;
+}
+
+.wiki-main .markdown-body h3 {
+  font-size: 17px;
+  color: var(--green);
+}
+
+.wiki-main .markdown-body li {
+  margin-bottom: 6px;
+}
+
+.wiki-main .markdown-body ol {
+  padding-left: 22px;
+  margin-bottom: 1em;
+}
+
+.wiki-main .markdown-body li > ul,
+.wiki-main .markdown-body li > ol {
+  margin: 6px 0;
+}
+
+.wiki-main .markdown-body a {
+  color: var(--green);
+  border-bottom: 1px dotted rgba(82, 193, 74, 0.5);
+}
+
+.wiki-main .markdown-body a:hover {
+  border-bottom-style: solid;
+}
+
+.wiki-main .markdown-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 6px 4px 14px;
+}
+
+.wiki-main .markdown-body h2 ~ .enchant-container {
+  height: 70vh;
+}
+
+/* 本页目录 */
+
+.wiki-toc {
+  position: sticky;
+  top: 122px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  font-size: 13px;
+}
+
+.wiki-toc.is-empty {
+  display: none;
+}
+
+.wiki-toc-title {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.wiki-toc nav a {
+  display: block;
+  padding: 5px 0 5px 12px;
+  color: var(--muted);
+  border-left: 2px solid var(--border);
+  line-height: 1.5;
+}
+
+.wiki-toc nav a.is-sub {
+  padding-left: 24px;
+}
+
+.wiki-toc nav a:hover {
+  color: var(--green);
+  border-left-color: var(--green);
+}
+
+.wiki-footer {
+  border-top: 1px solid var(--border);
+}
+
+/* 响应式 */
+
+@media (max-width: 1100px) {
+  .wiki-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+  .wiki-toc {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .wiki-side-toggle {
+    display: inline-block;
+  }
+
+  .wiki-toolbar {
+    top: 64px;
+  }
+
+  .wiki-layout {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 20px;
+  }
+
+  .wiki-sidebar {
+    position: fixed;
+    top: 107px;
+    left: 0;
+    bottom: 0;
+    width: 264px;
+    max-height: none;
+    padding: 20px 16px;
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 95;
+    overflow-y: auto;
+  }
+
+  .wiki-sidebar.open {
+    transform: none;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .wiki-main .markdown-body {
+    font-size: 15px;
+  }
+}
+
+/* ============ 首页：亮点卡片 / 玩法速览 / 加入条 ============ */
+
+a.card-link {
+  display: block;
+  color: var(--text);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+a.card-link:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+  background: var(--card-hover);
+}
+
+.card-more {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--green);
+}
+
+.chip-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.chip {
+  padding: 9px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  font-size: 14px;
+  transition: border-color 0.18s, color 0.18s, transform 0.18s;
+}
+
+.chip:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-2px);
+}
+
+.chip-note {
+  margin-top: 26px;
+  text-align: center;
+}
+
+.chip-note a {
+  color: var(--green);
+  font-size: 15px;
+}
+
+.join-band {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.join-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.join-step-no {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: #07130a;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: none;
+}
+
+.join-step-text {
+  color: var(--text);
+  font-size: 15px;
+}
+
+.join-band .code-line {
+  margin-top: 0;
+}
+
+.join-more {
+  align-self: flex-start;
+  margin-top: 14px;
+  color: var(--green);
+  font-size: 15px;
+  border-bottom: 1px dotted rgba(82, 193, 74, 0.5);
+}
+
+.join-more:hover {
+  border-bottom-style: solid;
+}
+
+@media (max-width: 720px) {
+  .join-band {
+    padding: 22px 18px;
+  }
+  .chip {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
