@@ -9,6 +9,7 @@
   <meta property="og:description" content="探索、建造、生存 —— 属于你的方块冒险。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.stcraft.cc/">
+  <meta property="og:image" content="https://www.stcraft.cc/images/4.png">
   <link rel="canonical" href="https://www.stcraft.cc/">
   <link rel="icon" type="image/svg+xml" href="images/4.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,37 +97,37 @@
       <p class="section-subtitle">完整介绍已整理进 Wiki，点开即看</p>
       <div class="grid grid-3">
         <a class="card card-link" href="wiki.html#features">
-          <img class="card-icon" src="images/new_realm.png" alt="服务器特色">
+          <img class="card-icon" loading="lazy" decoding="async" src="images/new_realm.png" alt="服务器特色">
           <h3>服务器特色</h3>
           <p>自定义地形、多版本兼容、反作弊守护、方块可回滚、多世界探索。</p>
           <span class="card-more">查看 Wiki &rarr;</span>
         </a>
         <a class="card card-link" href="wiki.html#gameplay">
-          <img class="card-icon" src="images/light.png" alt="玩法介绍">
+          <img class="card-icon" loading="lazy" decoding="async" src="images/light.png" alt="玩法介绍">
           <h3>玩法介绍</h3>
           <p>领地、mcMMO 技能、经济市场、每日签到、钓鱼红包、个性装扮。</p>
           <span class="card-more">查看 Wiki &rarr;</span>
         </a>
         <a class="card card-link" href="wiki.html#advanced">
-          <img class="card-icon" src="images/knowledge_book.png" alt="进阶玩法">
+          <img class="card-icon" loading="lazy" decoding="async" src="images/knowledge_book.png" alt="进阶玩法">
           <h3>进阶玩法</h3>
           <p>灵魂空间戒指、战令通行证、可爱玩偶、星露谷种植、自定义附魔。</p>
           <span class="card-more">查看 Wiki &rarr;</span>
         </a>
         <a class="card card-link" href="wiki.html#rules">
-          <img class="card-icon" src="images/draft_report.png" alt="服务器规则">
+          <img class="card-icon" loading="lazy" decoding="async" src="images/draft_report.png" alt="服务器规则">
           <h3>服务器规则</h3>
           <p>六条红线，公平游戏；违规处罚与申诉渠道一目了然。</p>
           <span class="card-more">查看 Wiki &rarr;</span>
         </a>
         <a class="card card-link" href="wiki.html#faq">
-          <img class="card-icon" src="images/structure_block_data.png" alt="常见问题">
+          <img class="card-icon" loading="lazy" decoding="async" src="images/structure_block_data.png" alt="常见问题">
           <h3>常见问题</h3>
           <p>正版还是离线？支持哪些版本？怎么保护家？答案都在这里。</p>
           <span class="card-more">查看 Wiki &rarr;</span>
         </a>
         <a class="card card-link" href="wiki.html#start">
-          <img class="card-icon" src="images/speed.png" alt="加入指南">
+          <img class="card-icon" loading="lazy" decoding="async" src="images/speed.png" alt="加入指南">
           <h3>加入指南</h3>
           <p>三步进服：启动游戏、添加服务器、注册登录，新手零门槛。</p>
           <span class="card-more">查看 Wiki &rarr;</span>
@@ -221,15 +222,6 @@
   <script src="js/main.js"></script>
 
   <script>
-    // 独占手风琴（FAQ 已迁移到 Wiki，保留给未来复用）
-    const details = document.querySelectorAll('details[name="faq-group"]');
-    details.forEach((targetDetail) => {
-      targetDetail.addEventListener('click', () => {
-        details.forEach((detail) => {
-          if (detail !== targetDetail) detail.removeAttribute('open');
-        });
-      });
-    });
 
     // 背景图交叉淡入 + 导航高亮
     document.addEventListener("DOMContentLoaded", function() {

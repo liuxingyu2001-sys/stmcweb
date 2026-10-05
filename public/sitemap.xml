@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.stcraft.cc/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html#start</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html#features</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html#gameplay</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html#advanced</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html#rules</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.stcraft.cc/wiki.html#faq</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+</urlset>

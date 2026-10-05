@@ -228,7 +228,9 @@
       var id = (a.getAttribute("href") || "").split("/")[1] || "";
       var el = document.getElementById(id);
       if (!el) return;
-      if (el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduced && el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      else if (el.scrollIntoView) el.scrollIntoView({ block: "start" });
       if (history.replaceState) history.replaceState(null, "", "#" + current.doc + "/" + id);
       current.anchor = id;
       updateSidebar();
@@ -261,6 +263,11 @@
     if (anchor) {
       var el = document.getElementById(anchor);
       var node = el;
+      /* marked 可能把锚点包进 <p>，此时应从该段落往后找标题 */
+      if (node && node.parentElement && node.parentElement.tagName === "P" &&
+          node.parentElement.children.length === 1) {
+        node = node.parentElement;
+      }
       var label = "";
       while (node && !/^H[1-6]$/.test(node.tagName)) { node = node.nextElementSibling; }
       if (node) label = node.textContent.trim();
@@ -396,15 +403,56 @@
 
     var sideToggle = $("wikiSideToggle");
     if (sideToggle && sidebarEl) {
+      var dim = document.createElement("div");
+      dim.className = "wiki-dim";
+      document.body.appendChild(dim);
+
+      var closeSide = function () {
+        sidebarEl.classList.remove("open");
+        dim.classList.remove("show");
+      };
+
       sideToggle.addEventListener("click", function () {
-        sidebarEl.classList.toggle("open");
+        var open = sidebarEl.classList.toggle("open");
+        dim.classList.toggle("show", open);
+      });
+      dim.addEventListener("click", closeSide);
+      contentEl.addEventListener("click", function () {
+        if (sidebarEl.classList.contains("open")) closeSide();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSide();
       });
       sidebarEl.querySelectorAll("a").forEach(function (a) {
-        a.addEventListener("click", function () {
-          sidebarEl.classList.remove("open");
-        });
+        a.addEventListener("click", closeSide);
       });
     }
+
+    /* 本页目录：滚动跟随高亮当前节 */
+    var spyTicking = false;
+    var spyUpdate = function () {
+      if (!tocNavEl || tocNavEl.children.length === 0) return;
+      var heads = contentEl.querySelectorAll("h2, h3");
+      var activeId = "";
+      for (var i = 0; i < heads.length; i++) {
+        if (heads[i].getBoundingClientRect().top <= 150) activeId = heads[i].id;
+        else break;
+      }
+      if (!activeId && heads.length) activeId = heads[0].id;
+      tocNavEl.querySelectorAll("a").forEach(function (a) {
+        a.classList.toggle("is-current", (a.getAttribute("href") || "").split("/")[1] === activeId);
+      });
+    };
+    window.addEventListener("scroll", function () {
+      if (spyTicking) return;
+      spyTicking = true;
+      requestAnimationFrame(function () {
+        spyTicking = false;
+        spyUpdate();
+      });
+    }, { passive: true });
+    window.addEventListener("hashchange", function () { setTimeout(spyUpdate, 120); });
+    setTimeout(spyUpdate, 300);
 
     load(parseHash());
   });

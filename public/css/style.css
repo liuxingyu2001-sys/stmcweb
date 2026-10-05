@@ -1607,3 +1607,275 @@ a.card-link:hover {
     font-size: 13px;
   }
 }
+
+/* ============ 2026-10 精修层：质感与可访问性 ============ */
+
+::selection {
+  background: rgba(82, 193, 74, 0.32);
+  color: #fff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2b3644 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b3644;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4a5e;
+  background-clip: content-box;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 导航当前项指示条 */
+.nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* 首屏 */
+.hero-badge {
+  letter-spacing: 2px;
+}
+
+.hero-title {
+  letter-spacing: 6px;
+}
+
+.status-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.status-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+}
+
+.dot.online {
+  box-shadow: 0 0 0 0 rgba(82, 193, 74, 0.55);
+  animation: dotPulse 2.4s ease-out infinite;
+}
+
+@keyframes dotPulse {
+  0% { box-shadow: 0 0 0 0 rgba(82, 193, 74, 0.5); }
+  70% { box-shadow: 0 0 0 9px rgba(82, 193, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(82, 193, 74, 0); }
+}
+
+/* 分区标题层级 */
+.section-title {
+  letter-spacing: 4px;
+}
+
+.section-subtitle {
+  letter-spacing: 1.5px;
+}
+
+/* 卡片顶部高亮线 + 图标统一 */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card-icon {
+  image-rendering: pixelated;
+}
+
+/* 玩法速览 chips */
+.chip {
+  position: relative;
+  overflow: hidden;
+}
+
+.chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  transform: translateY(101%);
+  transition: transform 0.24s ease;
+  z-index: -1;
+}
+
+.chip:hover::before {
+  transform: translateY(0);
+}
+
+.chip:hover {
+  color: #07130a;
+  border-color: var(--green);
+  text-shadow: none;
+}
+
+/* 加入条 */
+.join-band {
+  position: relative;
+}
+
+.join-band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(82, 193, 74, 0.6), transparent);
+}
+
+/* Wiki 正文精修 */
+.wiki-main .markdown-body > h1 + p {
+  font-size: 17px;
+  color: #c3ccd6;
+}
+
+.wiki-main .markdown-body tbody tr {
+  transition: background 0.15s;
+}
+
+.wiki-main .markdown-body tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wiki-main .markdown-body pre {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+}
+
+.wiki-main .markdown-body pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #b7e6b3;
+}
+
+.wiki-main .markdown-body h2,
+.wiki-main .markdown-body h3 {
+  transition: color 0.15s;
+}
+
+.wiki-loading {
+  animation: fadeBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes fadeBlink {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+/* 本页目录当前节高亮 */
+.wiki-toc nav a.is-current {
+  color: var(--green);
+  border-left-color: var(--green);
+}
+
+/* 移动端抽屉遮罩 */
+.wiki-dim {
+  display: none;
+  position: fixed;
+  inset: 107px 0 0 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 94;
+}
+
+.wiki-dim.show {
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .wiki-dim {
+    display: none;
+  }
+  .wiki-dim.show {
+    display: block;
+  }
+}
+
+/* 动画偏好尊重 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* chips 悬浮：改用直接过渡，避免伪元素层级问题 */
+.chip {
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+}
+
+.chip::before {
+  display: none;
+}
+
+.chip:hover {
+  background: var(--green);
+  color: #07130a;
+  border-color: var(--green);
+  text-shadow: none;
+}
